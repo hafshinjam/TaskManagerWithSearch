@@ -52,7 +52,7 @@ public class DoingTaskListFragment extends TaskListFragment {
         mTasks = new ArrayList<Task>();
         if (getArguments() != null) {
             CurrentUser = (User) getArguments().getSerializable("CurrentUser");
-            if (CurrentUser.getUserName() .equals("admin"))
+            if (CurrentUser.getUserName() .equals("Admin"))
                 mTasks = mTaskRepository.getStateList(State.DOING);
             else mTasks = mTaskRepository.getStateList(State.DOING, CurrentUser);
         }
@@ -96,7 +96,7 @@ public class DoingTaskListFragment extends TaskListFragment {
     }
 
     private void updateList() {
-        if (CurrentUser.getUserName() .equals("admin"))
+        if (CurrentUser.getUserName() .equals("Admin"))
             mTasks = mTaskRepository.getStateList(State.DOING);
         else mTasks = mTaskRepository.getStateList(State.DOING, CurrentUser);
 

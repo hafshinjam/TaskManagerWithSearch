@@ -59,7 +59,7 @@ public class TodoTaskListFragment extends TaskListFragment {
         mTasks = new ArrayList<>();
         if (getArguments() != null) {
             CurrentUser = (User) getArguments().getSerializable("CurrentUser");
-            if (CurrentUser.getUserName() .equals("admin"))
+            if (CurrentUser.getUserName() .equals("Admin"))
                 mTasks = mTaskRepository.getStateList(State.TODO);
             else mTasks = mTaskRepository.getStateList(State.TODO, CurrentUser);
         }
@@ -99,7 +99,7 @@ public class TodoTaskListFragment extends TaskListFragment {
 
     }
     private void updateList() {
-        if (CurrentUser.getUserName() .equals("admin"))
+        if (CurrentUser.getUserName() .equals("Admin"))
             mTasks = mTaskRepository.getStateList(State.TODO);
         else mTasks = mTaskRepository.getStateList(State.TODO, CurrentUser);
     }
